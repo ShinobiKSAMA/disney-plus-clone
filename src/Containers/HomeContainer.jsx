@@ -1,41 +1,10 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import GridCard from "../Components/GridCard";
+import Grid from "../Components/Lists/Grid";
+import channels from "../Data/Channels";
+import recommended from "../Data/Recommended";
 
 const HomeContainer = () => {
-  const channels = [
-    {
-      name: "Disney",
-      imageLink:
-        "https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1_5x/sources/r1/cms/prod/6347/746347-h",
-      videoLink: "",
-    },
-    {
-      name: "Pixar",
-      imageLink:
-        "https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1_5x/sources/r1/cms/prod/6348/746348-h",
-      videoLink: "",
-    },
-    {
-      name: "Marvel",
-      imageLink:
-        "https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1_5x/sources/r1/cms/prod/6349/746349-h",
-      videoLink: "",
-    },
-    {
-      name: "Star Wars",
-      imageLink:
-        "https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1_5x/sources/r1/cms/prod/6357/746357-h",
-      videoLink: "",
-    },
-    {
-      name: "National Geography",
-      imageLink:
-        "https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1_5x/sources/r1/cms/prod/6355/746355-h",
-      videoLink: "",
-    },
-  ];
-
   return (
     <>
       <div className="px-5 md:px-10">
@@ -89,25 +58,10 @@ const HomeContainer = () => {
         </Carousel>
 
         {/* Channels */}
-        <div className="flex space-x-4 ">
-          {channels.map((channel) => (
-            <GridCard key={channel.name} channel={channel} isChannel />
-          ))}
-        </div>
+        <Grid title="Channels" contents={channels} type="channel" />
 
-        {/* Content */}
-        <div className="flex flex-nowrap overflow-x-scroll md:overflow-hidden py-5 space-x-4 ">
-          {[0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map((i, idx) => (
-            <GridCard
-              key={idx}
-              channel={{
-                imageLink:
-                  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/4209/1104209-v-5c51ee3fb954",
-                name: "cyubs",
-              }}
-            />
-          ))}
-        </div>
+        {/*Traiil*/}
+        <Grid title="Recommended" contents={recommended} type="vertical" />
       </div>
     </>
   );

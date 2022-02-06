@@ -1,4 +1,4 @@
-const GridCard = ({ channel, isChannel = false }) => {
+const GridCard = ({ content, isChannel = false }) => {
   return (
     <>
       <div
@@ -12,8 +12,8 @@ const GridCard = ({ channel, isChannel = false }) => {
       >
         <img
           className="rounded-md"
-          src={channel.imageLink}
-          alt={channel.name}
+          src={content.imageLink}
+          alt={content.name}
         />
       </div>
     </>
