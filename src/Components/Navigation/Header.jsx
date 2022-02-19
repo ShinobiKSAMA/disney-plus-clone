@@ -1,4 +1,5 @@
 import { HiHome, HiPlus, HiSearch, HiStar } from "react-icons/hi";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const linkStyle = "flex items-center";
@@ -6,7 +7,12 @@ const Header = () => {
 
   return (
     <>
-      <div className="z-50 w-full md:px-10 px-5 py-4">
+      <div
+        className={
+          "fixed top-0 z-50 w-full md:px-10 px-5 py-4 " +
+          "bg-gradient-to-b from-[#141b29] to-[#0c111b]"
+        }
+      >
         <div className="flex w-full items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
@@ -18,22 +24,30 @@ const Header = () => {
 
           {/* Links */}
           <div className="hidden md:flex flex-1 px-10 py-3 items-center justify-start space-x-10">
-            <div href="#" className={linkStyle}>
-              <HiHome size={25} />
-              <span className={linkTextStyle}>Home</span>
-            </div>
-            <div href="#" className={linkStyle}>
-              <HiSearch size={25} />
-              <span className={linkTextStyle}>Search</span>
-            </div>
-            <div href="#" className={linkStyle}>
-              <HiPlus size={25} />
-              <span className={linkTextStyle}>Watchlist</span>
-            </div>
-            <div href="#" className={linkStyle}>
-              <HiStar size={25} />
-              <span className={linkTextStyle}>Originals</span>
-            </div>
+            <NavLink to="/">
+              <div className={linkStyle}>
+                <HiHome size={25} />
+                <span className={linkTextStyle}>Home</span>
+              </div>
+            </NavLink>
+            <NavLink to="/">
+              <div className={linkStyle}>
+                <HiSearch size={25} />
+                <span className={linkTextStyle}>Search</span>
+              </div>
+            </NavLink>
+            <NavLink to="/">
+              <div className={linkStyle}>
+                <HiPlus size={25} />
+                <span className={linkTextStyle}>Watchlist</span>
+              </div>
+            </NavLink>
+            <NavLink to="/">
+              <div className={linkStyle}>
+                <HiStar size={25} />
+                <span className={linkTextStyle}>Originals</span>
+              </div>
+            </NavLink>
           </div>
 
           {/* Avatar */}

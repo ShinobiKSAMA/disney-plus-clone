@@ -4,9 +4,9 @@ const Grid = ({ title, contents, type }) => {
   return (
     <>
       {/* Content */}
-      <div className="relative py-5">
+      <div className="relative pt-5 pb-10">
         {type !== "channel" && (
-          <span className="absolute -mt-2 text-lg font-bold ">{title}</span>
+          <span className="absolute -mt-1 text-lg font-bold ">{title}</span>
         )}
         <div
           className={
